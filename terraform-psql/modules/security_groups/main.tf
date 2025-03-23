@@ -79,6 +79,20 @@ resource "aws_security_group" "psql_sg" {
     security_groups = [aws_security_group.lb_sg.id, aws_security_group.jumphost_sg.id]
   }
 
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "http"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "ssh"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -101,6 +115,20 @@ resource "aws_security_group" "g_sg" {
     to_port         = 3000
     protocol        = "tcp"
     security_groups = [aws_security_group.lb_sg.id, aws_security_group.jumphost_sg.id]
+  }
+
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "http"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+
+  ingress {
+    from_port   = 22
+    to_port     = 22
+    protocol    = "ssh"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
