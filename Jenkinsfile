@@ -22,7 +22,7 @@ pipeline {
 
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/rjsunny05/postgreSQL-proj.git'
+                git branch: 'main', url: 'https://github.com/rjsunny05/grafana-psql-OCI.git'
             }
         }
 
