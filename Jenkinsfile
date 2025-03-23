@@ -3,8 +3,8 @@ pipeline {
 
     environment {
         AWS_REGION = 'us-east-1'
-        TF_WORKING_DIR = 'terraform-postgreSQL'
-        TF_STATE_FILE = 'terraform-postgreSQL/terraform.tfstate'
+        TF_WORKING_DIR = 'terraform-psql'
+        TF_STATE_FILE = 'terraform-psql/terraform.tfstate'
         ANSIBLE_HOST_KEY_CHECKING = 'False'
     }
 
