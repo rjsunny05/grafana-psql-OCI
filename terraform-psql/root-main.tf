@@ -35,12 +35,6 @@ module "route_table" {
   private_subnet2_id = module.subnet.private_subnet2_id
 }
 
-module "peering_connection" {
-  source          = "./modules/peering_connection"
-  requester_vpc_id = "vpc-0996ede71c3cf9ec2"
-  accepter_vpc_id = module.vpc.vpc_id
-  peering_name    = "project-peering"
-}
 
 module "nacl" {
   source           = "./modules/nacl"
