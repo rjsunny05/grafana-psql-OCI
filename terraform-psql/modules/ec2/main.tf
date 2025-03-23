@@ -4,6 +4,7 @@ resource "aws_instance" "jumphost" {
   key_name               = var.key_name
   subnet_id              = var.public_subnet1_id
   vpc_security_group_ids = [var.jumphost_sg_id]
+  associate_public_ip_address = true
 
   tags = {
     Name = "Bastion Host"
