@@ -54,7 +54,7 @@ module "ec2" {
   source            = "./modules/ec2"
   ami_id-g            = "ami-061ab26bb1741c539"
   ami_id-psql            = "ami-07d841fa96428cacb" # Ubuntu 22.04 LTS
-  instance_type     = "t2.medium"
+  instance_type     = "t2.micro"
   
   public_subnet1_id = module.subnet.public_subnet1_id
   private_subnet1_id = module.subnet.private_subnet1_id
